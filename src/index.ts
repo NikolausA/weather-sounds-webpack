@@ -1,5 +1,5 @@
 import "./index.css";
-import images from "./modules/imageData";
+import images from "./modules/imagesData";
 import icons from "./modules/iconsData";
 import sounds from "./modules/soundsData";
 import createList from "./modules/createList";
