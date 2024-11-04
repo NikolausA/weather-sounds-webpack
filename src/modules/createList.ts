@@ -3,8 +3,8 @@ import { MediaFiles } from "../../types/mediaFiles";
 
 export default function createList(
   item: string,
-  node: HTMLDivElement,
-  handleClick: () => void,
+  node: HTMLUListElement,
+  handleClick: (e: Event) => void,
   iconsObj: MediaFiles
 ) {
   const keyWord = getKeyWordFromUrl(item);
