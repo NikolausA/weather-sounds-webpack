@@ -1,6 +1,12 @@
 import getKeyWordFromUrl from "./getKeyWordFromUrl";
+import { MediaFiles } from "../../types/mediaFiles";
 
-export default function createList(item, node, handleClick, iconsObj) {
+export default function createList(
+  item: string,
+  node: HTMLUListElement,
+  handleClick: (e: Event) => void,
+  iconsObj: MediaFiles
+) {
   const keyWord = getKeyWordFromUrl(item);
 
   const li = document.createElement("li");
@@ -9,7 +15,7 @@ export default function createList(item, node, handleClick, iconsObj) {
   li.addEventListener("click", handleClick);
 
   const img = document.createElement("img");
-  img.src = iconsObj[keyWord];
+  img.src = iconsObj[keyWord as keyof typeof iconsObj];
   li.appendChild(img);
   node.append(li);
 }

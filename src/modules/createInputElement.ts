@@ -1,5 +1,7 @@
-export default function createInputElement(audioEl) {
-  const input = document.createElement("input");
+export default function createInputElement(
+  audioEl: HTMLAudioElement
+): HTMLInputElement {
+  const input: HTMLInputElement = document.createElement("input");
   input.setAttribute("type", "range");
   input.setAttribute("class", "volume-bar");
   input.setAttribute("id", "volume-bar");
@@ -9,7 +11,7 @@ export default function createInputElement(audioEl) {
   input.setAttribute("value", "0.5");
 
   input.addEventListener("change", () => {
-    audioEl.volume = input.value;
+    audioEl.volume = +input.value;
   });
 
   return input;
